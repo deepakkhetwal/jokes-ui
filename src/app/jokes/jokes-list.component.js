@@ -20,9 +20,7 @@ var JokesListComponent = (function () {
         var _this = this;
         this.jokesListDataService.getJokesList()
             .subscribe(function (p) {
-            var obj = JSON.parse(p);
-            _this.jokes = obj._body['jokes'];
-            console.log('jokes' + _this.jokes);
+            _this.jokes = p;
         });
     };
     JokesListComponent = __decorate([

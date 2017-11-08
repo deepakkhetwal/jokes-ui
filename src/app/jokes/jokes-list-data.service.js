@@ -11,22 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by deepakkhetwal on 8/21/17.
  */
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 var JokesListDataService = (function () {
     function JokesListDataService(http) {
         this.http = http;
     }
     JokesListDataService.prototype.getJokesList = function () {
-        var url = environment.kidsLaughsApi + '/jokes';
-        //console.log('url' + url);
+        var url = environment.kidsLaughsApi; //'http://localhost:3001';
         return this.http
             .get(url);
     };
     JokesListDataService = __decorate([
         Injectable(),
-        __metadata("design:paramtypes", [Http])
+        __metadata("design:paramtypes", [HttpClient])
     ], JokesListDataService);
     return JokesListDataService;
 }());

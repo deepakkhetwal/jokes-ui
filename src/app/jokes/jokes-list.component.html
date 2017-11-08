@@ -1,6 +1,10 @@
-<div>
-  <div *ngFor="let joke of jokes">
-    {{joke._id.description}}
-  </div>
+ <ul class="list-group" *ngFor="let joke of jokes">
+   <li class="list-group-item">
+         {{joke.description}}
+         <button type="button" class="btn btn-default" aria-label="Left Align">
+         <span class="fa fa-thumbs-up" style="opacity:.1"  aria-hidden="true"></span>
+         </button> {{joke.likes_count}} Likes
+   </li>
+ </ul>
 
-</div>
+

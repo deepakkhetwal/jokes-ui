@@ -20,11 +20,7 @@ export class JokesListComponent implements OnInit{
     ngOnInit(): void{
         this.jokesListDataService.getJokesList()
             .subscribe(p => {
-                let obj = JSON.parse(p);
-                this.jokes = obj._body['jokes'];
-                console.log('jokes' + this.jokes);
+                this.jokes = p;
             });
-
-
     }
 }

@@ -14,13 +14,11 @@ var AppComponent = (function () {
         this.cache = cache;
     }
     AppComponent.prototype.ngOnInit = function () {
-        // This is an example
-        this.cache.set('message', 'Hello World');
     };
     AppComponent = __decorate([
         Component({
             selector: 'main-app',
-            template: "<nav><a routerLink=\"/jokes\">Jokes</a> </nav>\n    <router-outlet></router-outlet>"
+            templateUrl: './app.component.html'
         }),
         __metadata("design:paramtypes", [TransferState])
     ], AppComponent);
