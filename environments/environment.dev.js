@@ -1,3 +1,3 @@
 export var environment = {
-    kidsLaughsApi: 'http://localhost:3001'
+    kidsLaughsApi: 'https://kids-jokes-api.herokuapp.com'
 };

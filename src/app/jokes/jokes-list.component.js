@@ -15,13 +15,24 @@ import { JokesListDataService } from './jokes-list-data.service';
 var JokesListComponent = (function () {
     function JokesListComponent(jokesListDataService) {
         this.jokesListDataService = jokesListDataService;
+        this.liked = [];
     }
     JokesListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.jokesListDataService.getJokesList()
             .subscribe(function (p) {
             _this.jokes = p;
+            for (var i = 0; i < _this.jokes.length; i++) {
+                _this.liked[i] = false;
+            }
         });
+    };
+    JokesListComponent.prototype.onPostLike = function (index) {
+        this.jokes[index].likes_count = this.jokes[index].likes_count + 1;
+        this.liked[index] = true;
+        var _id = this.jokes[index]._id;
+        this.jokesListDataService.postLike({ _id: _id })
+            .subscribe();
     };
     JokesListComponent = __decorate([
         Component({

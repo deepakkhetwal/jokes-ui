@@ -22,6 +22,11 @@ var JokesListDataService = (function () {
         return this.http
             .get(url);
     };
+    JokesListDataService.prototype.postLike = function (body) {
+        var url = environment.kidsLaughsApi + '/inc-likes-cnt';
+        return this.http
+            .post(url, body);
+    };
     JokesListDataService = __decorate([
         Injectable(),
         __metadata("design:paramtypes", [HttpClient])

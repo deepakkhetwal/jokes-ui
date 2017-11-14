@@ -1,10 +1,16 @@
- <ul class="list-group" *ngFor="let joke of jokes">
+ <ul class="list-group" *ngFor="let joke of jokes; let i=index">
    <li class="list-group-item">
-         {{joke.description}}
-         <button type="button" class="btn btn-default" aria-label="Left Align">
-         <span class="fa fa-thumbs-up" style="opacity:.1"  aria-hidden="true"></span>
-         </button> {{joke.likes_count}} Likes
+     {{joke.description}}
+         <br>
+         <button *ngIf="liked[i]===false" type="button" class="btn btn-light" aria-label="Left Align" (click)="onPostLike(i)">
+         <i class="fa fa-bell-o fa-lg"   aria-hidden="true"></i> Like
+         </button>
+       <button *ngIf="liked[i]===true" type="button" class="btn btn-light" aria-label="Left Align">
+         <i class="fa fa-bell fa-lg"   aria-hidden="true"></i> Like
+       </button>
+     {{joke.likes_count}} Likes
    </li>
  </ul>
+
 
 
