@@ -10,7 +10,7 @@
     "AngularClass <deepakkhetwal@gmail.com>"
   ],
   "scripts": {
-    "start": "npm run build && npm run server",
+    "start": "npm run build:prod & npm run server",
     "build": "webpack",
     "build:aot": "webpack --env.aot --env.client & webpack --env.aot --env.server",
     "build:prod": "webpack --env.aot --env.client -p & webpack --env.aot --env.server",
@@ -18,7 +18,7 @@
     "prebuild:aot": "npm run clean",
     "prebuild:prod": "npm run clean",
     "clean": "rimraf dist",
-    "server": "nodemon dist/server.js",
+    "server": "node dist/server.js",
     "watch": "webpack --watch",
     "lint": "tslint ./src/**/*"
   },
