@@ -10,7 +10,7 @@ import {PostJokeModule} from './post-joke/post-joke.module';
 import {ContactModule} from './contact-us/contact.module';
 import {ContactComponent} from './contact-us/contact.component';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {TransferHttpCacheModule} from '@nguniversal/common'
 @NgModule({
   imports: [
     CommonModule,
@@ -21,6 +21,7 @@ import { BrowserModule } from '@angular/platform-browser';
     BrowserModule.withServerTransition({
           appId: 'my-app-id'
     }),
+    TransferHttpCacheModule,
     RouterModule.forRoot([
       { path: '', component: JokesListComponent, pathMatch: 'full'},
       {path: 'jokes', component: JokesListComponent},
