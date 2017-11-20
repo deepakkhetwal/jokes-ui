@@ -9,7 +9,7 @@ import {PostJokeComponent} from './post-joke/post-joke.component';
 import {PostJokeModule} from './post-joke/post-joke.module';
 import {ContactModule} from './contact-us/contact.module';
 import {ContactComponent} from './contact-us/contact.component';
-
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
@@ -18,6 +18,9 @@ import {ContactComponent} from './contact-us/contact.component';
     JokesListModule,
     PostJokeModule,
     ContactModule,
+    BrowserModule.withServerTransition({
+          appId: 'my-app-id'
+    }),
     RouterModule.forRoot([
       { path: '', component: JokesListComponent, pathMatch: 'full'},
       {path: 'jokes', component: JokesListComponent},
@@ -26,6 +29,7 @@ import {ContactComponent} from './contact-us/contact.component';
     ])
   ],
   declarations: [ AppComponent],
-  exports: [ AppComponent ]
+  exports: [ AppComponent ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TransferState } from '../modules/transfer-state/transfer-state';
+import { Meta, Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -7,9 +7,6 @@ import { TransferState } from '../modules/transfer-state/transfer-state';
   templateUrl: './app.component.html'
 
 })
-export class AppComponent implements OnInit {
-  constructor(private cache: TransferState) { }
+export class AppComponent {
 
-  ngOnInit() {
-  }
 }
