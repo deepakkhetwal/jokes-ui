@@ -9,6 +9,8 @@ import {PostJokeComponent} from './post-joke/post-joke.component';
 import {PostJokeModule} from './post-joke/post-joke.module';
 import {ContactModule} from './contact-us/contact.module';
 import {ContactComponent} from './contact-us/contact.component';
+import {SubscriptionModule} from './subscription/subscription.module';
+import {SubscriptionComponent} from './subscription/subscription.component';
 import { BrowserModule } from '@angular/platform-browser';
 import {TransferHttpCacheModule} from '@nguniversal/common'
 @NgModule({
@@ -18,6 +20,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common'
     JokesListModule,
     PostJokeModule,
     ContactModule,
+    SubscriptionModule,
     BrowserModule.withServerTransition({
           appId: 'my-app-id'
     }),
@@ -27,6 +30,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common'
       {path: 'jokes', component: JokesListComponent},
       {path: 'post-joke', component: PostJokeComponent},
       {path: 'get-contact', component: ContactComponent},
+      {path: 'subscribe', component: SubscriptionComponent}
     ])
   ],
   declarations: [ AppComponent],
