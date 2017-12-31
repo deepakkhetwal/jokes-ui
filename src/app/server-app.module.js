@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { TransferState } from '../modules/transfer-state/transfer-state';
 import { BrowserModule } from '@angular/platform-browser';
+import {TransferHttpCacheModule} from '@nguniversal/common';
 export function onBootstrap(appRef, transferState) {
     return function () {
         appRef.isStable
@@ -33,6 +34,7 @@ var ServerAppModule = (function () {
                 }),
                 ServerModule,
                 ServerTransferStateModule,
+                TransferHttpCacheModule,
                 AppModule
             ],
             providers: [
